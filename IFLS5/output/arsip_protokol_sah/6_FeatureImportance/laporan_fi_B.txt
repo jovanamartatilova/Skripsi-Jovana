@@ -1,0 +1,13 @@
+
+==============================================================================
+SET PREDIKTOR B
+==============================================================================
+  Model terpilih S4: Random Forest | 102 kolom -> 69 variabel asal | thr 0.46
+  PERINGATAN: set B memuat BB anak dan WAZ -> importance bisa didominasi ukuran tubuh anak.
+  Kinerja dasar test: AUC 0.8080, F1 0.6565
+  [2] Permutasi per variabel (69 variabel x 20) ...
+  [3] SHAP dihitung pada 500 baris test
+  [4] Peringkat gabungan (5 teratas): waz, bb_anak, tinggi_ibu, umur_bln, tinggi_ayah
+      Konsistensi bawaan vs permutasi (Spearman): 0.20  -> metode berbeda pendapat; andalkan permutasi (lebih dapat dipercaya pada fitur berkorelasi)
+  [5] Porsi kontribusi (permutasi) komponen rumus HAZ (TB, umur, JK): 4.5%
+  [8] Contoh penjelasan per balita dibuat (3 kasus); fungsi untuk dashboard: jelaskan_risiko.py

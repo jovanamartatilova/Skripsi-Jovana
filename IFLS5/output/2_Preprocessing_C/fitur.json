@@ -1,0 +1,25 @@
+{
+  "versi_sklearn": "1.9.1",
+  "spline": false,
+  "fitur_numerik": [
+    "umur_bln",
+    "jk_laki",
+    "tb_anak",
+    "waz",
+    "masih_asi",
+    "vit_a_6bln",
+    "hb_ibu",
+    "jenis_makanan_7hr"
+  ],
+  "fitur_kategorik": [],
+  "nama_kolom_hasil": [
+    "umur_bln",
+    "jk_laki",
+    "tb_anak",
+    "waz",
+    "masih_asi",
+    "vit_a_6bln",
+    "hb_ibu",
+    "jenis_makanan_7hr"
+  ]
+}

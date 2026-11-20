@@ -1,0 +1,31 @@
+{
+  "versi_sklearn": "1.9.1",
+  "spline": false,
+  "fitur_numerik": [
+    "umur_bln",
+    "jk_laki",
+    "waz",
+    "masih_asi",
+    "air_layak",
+    "air_direbus",
+    "sampah_layak",
+    "kartu_sehat",
+    "frek_timbang_6bln",
+    "hb_anak",
+    "hb_ibu"
+  ],
+  "fitur_kategorik": [],
+  "nama_kolom_hasil": [
+    "umur_bln",
+    "jk_laki",
+    "waz",
+    "masih_asi",
+    "air_layak",
+    "air_direbus",
+    "sampah_layak",
+    "kartu_sehat",
+    "frek_timbang_6bln",
+    "hb_anak",
+    "hb_ibu"
+  ]
+}

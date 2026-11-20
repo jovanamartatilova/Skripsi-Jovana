@@ -1,0 +1,30 @@
+# ============================================================
+# KONFIGURASI TEMA STREAMLIT
+#
+# File ini WAJIB diletakkan di folder ".streamlit" tepat di
+# sebelah tempat kamu menjalankan perintah "streamlit run ...".
+#
+# Contoh struktur folder:
+#
+#   project/
+#   ├── .streamlit/
+#   │   └── config.toml   <-- file ini
+#   └── dashboard.py      <-- (atau nama file dashboard kamu)
+#
+# Tujuan: memaksa seluruh aplikasi SELALU memakai tema terang,
+# supaya widget bawaan Streamlit (date_input, selectbox,
+# multiselect, slider, kalender popup, dsb) tidak lagi ikut
+# tema gelap/terang browser pengguna secara otomatis. Ini
+# adalah sumber utama kenapa sebagian teks/kotak input terlihat
+# "hilang" (warna teks & latar jadi sama-sama gelap) -
+# CSS biasa tidak selalu bisa menjangkau ini karena beberapa
+# komponen mengatur warnanya sendiri dari dalam.
+# ============================================================
+
+[theme]
+base = "light"
+primaryColor = "#183b91"
+backgroundColor = "#f5f6f8"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#202020"
+font = "sans serif"

@@ -1,0 +1,5 @@
+﻿peringkat,variabel,label,turun_AUC_rata2,porsi_pct,kumulatif_pct,nyata,dipilih,arah,penjelasan_dashboard
+1,jenis_makanan_7hr,Jenis makanan 7 hari terakhir,0.00023,60.14,60.14,tidak,tidak,nilai naik -> risiko turun,
+2,vit_a_6bln,Vitamin A 6 bulan terakhir,9e-05,25.32,85.46,tidak,tidak,hubungan lemah,
+3,masih_asi,Masih disusui,5e-05,14.54,100.0,tidak,tidak,bernilai 1 -> risiko naik,
+4,hb_ibu,Kadar hemoglobin ibu (g/dL),-0.00054,0.0,100.0,tidak,tidak,hubungan lemah/tidak monoton,

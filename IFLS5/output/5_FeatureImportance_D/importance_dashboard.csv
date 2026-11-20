@@ -1,0 +1,9 @@
+﻿peringkat,variabel,label,turun_AUC_rata2,porsi_pct,kumulatif_pct,nyata,dipilih,arah,penjelasan_dashboard
+1,air_layak,Sumber air minum layak,0.00708,34.49,34.49,ya,ya,bernilai 1 -> risiko turun,
+2,masih_asi,Masih disusui,0.00346,16.86,51.35,ya,ya,hubungan lemah,
+3,air_direbus,Air minum direbus,0.00308,15.02,66.37,ya,ya,bernilai 1 -> risiko turun,
+4,sampah_layak,Pembuangan sampah layak,0.00271,13.19,79.56,ya,ya,bernilai 1 -> risiko turun,
+5,frek_timbang_6bln,Frekuensi ditimbang 6 bulan terakhir,0.00204,9.92,89.49,tidak,tidak,nilai naik -> risiko turun,
+6,hb_anak,Kadar hemoglobin anak (g/dL),0.00137,6.67,96.16,tidak,tidak,nilai naik -> risiko turun,
+7,hb_ibu,Kadar hemoglobin ibu (g/dL),0.00075,3.65,99.81,tidak,tidak,hubungan lemah/tidak monoton,
+8,kartu_sehat,Punya kartu kesehatan,4e-05,0.19,100.0,tidak,tidak,hubungan lemah,

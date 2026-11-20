@@ -1,0 +1,71 @@
+﻿peringkat,variabel,label,kelompok,jenis_faktor,kontribusi_pct,importance_bawaan_pct,arah
+1,tb_anak,Tinggi/panjang badan anak (cm),"Komponen rumus HAZ (TB, umur, JK)",Faktor latar,35.82,28.32,nilai naik -> risiko turun
+2,umur_bln,Umur anak (bulan),"Komponen rumus HAZ (TB, umur, JK)",Faktor latar,22.5,13.19,nilai naik -> risiko naik
+3,bb_anak,Berat badan anak (kg),"Ukuran tubuh anak (BB, WAZ)",Faktor latar,15.48,11.92,nilai naik -> risiko turun
+4,waz,Skor BB menurut umur (WAZ),"Ukuran tubuh anak (BB, WAZ)",Faktor latar,18.01,6.97,nilai naik -> risiko turun
+5,hanya_asi,hanya asi,Makan & kesehatan anak,Faktor latar,3.37,2.92,nilai naik -> risiko turun
+6,jenis_makanan_7hr,jenis makanan 7hr,Makan & kesehatan anak,Faktor yang bisa ditindaklanjuti,0.85,1.37,hubungan lemah/tidak monoton
+7,imt_ayah,IMT ayah,Orang tua,Faktor latar,0.85,1.25,nilai naik -> risiko turun
+8,bb_ayah,Berat badan ayah (kg),Orang tua,Faktor latar,0.6,1.18,nilai naik -> risiko turun
+9,imun_campak,imun campak,Layanan anak,Faktor yang bisa ditindaklanjuti,0.51,1.14,nilai naik -> risiko naik
+10,jenis_sayur_buah_7hr,jenis sayur buah 7hr,Makan & kesehatan anak,Faktor yang bisa ditindaklanjuti,0.35,0.92,hubungan lemah/tidak monoton
+11,imun_dpt,imun dpt,Layanan anak,Faktor yang bisa ditindaklanjuti,0.31,0.85,hubungan lemah/tidak monoton
+12,total_hari_makan_7hr,total hari makan 7hr,Makan & kesehatan anak,Faktor yang bisa ditindaklanjuti,0.29,0.77,hubungan lemah/tidak monoton
+13,jk_laki,Jenis kelamin laki-laki,"Komponen rumus HAZ (TB, umur, JK)",Faktor latar,0.22,0.46,hubungan lemah/tidak monoton
+14,usia_mpasi_bln,Usia mulai MPASI (bulan),ASI & MPASI,Faktor yang bisa ditindaklanjuti,0.09,0.45,hubungan lemah/tidak monoton
+15,limbah_kode,Pembuangan limbah cair,Air & sanitasi,Faktor yang bisa ditindaklanjuti,0.02,5.3,nominal (lihat rata-rata per kategori)
+16,mpasi_dini,MPASI dini (<6 bulan),ASI & MPASI,Faktor yang bisa ditindaklanjuti,0.07,0.51,hubungan lemah/tidak monoton
+17,jumlah_jenis_imun,Jumlah jenis imunisasi,Layanan anak,Faktor yang bisa ditindaklanjuti,0.09,0.42,nilai naik -> risiko naik
+18,hari_susu_7hr,hari susu 7hr,Makan & kesehatan anak,Faktor yang bisa ditindaklanjuti,0.08,0.42,nilai naik -> risiko turun
+19,provinsi,Provinsi,Sosial ekonomi,Faktor latar,0.01,11.76,nominal (lihat rata-rata per kategori)
+20,log_pengeluaran_perkapita,Pengeluaran per kapita (log),Sosial ekonomi,Faktor latar,0.07,0.31,nilai naik -> risiko turun
+21,hari_makanan_olahan_7hr,hari makanan olahan 7hr,Makan & kesehatan anak,Faktor yang bisa ditindaklanjuti,0.04,0.32,nilai naik -> risiko naik
+22,imt_ibu,IMT ibu,Orang tua,Faktor latar,0.07,0.3,nilai naik -> risiko turun
+23,umur_ayah,Umur ayah (tahun),Orang tua,Faktor latar,0.03,0.3,hubungan lemah/tidak monoton
+24,tinggi_ayah,Tinggi badan ayah (cm),Orang tua,Faktor latar,0.02,0.33,nilai naik -> risiko turun
+25,jumlah_anggota_RT,Jumlah anggota rumah tangga,Sosial ekonomi,Faktor latar,0.03,0.27,hubungan lemah/tidak monoton
+26,masih_asi,Masih disusui,ASI & MPASI,Faktor yang bisa ditindaklanjuti,0.03,0.29,hubungan lemah/tidak monoton
+27,jumlah_gejala_4mgg,jumlah gejala 4mgg,Makan & kesehatan anak,Faktor latar,0.04,0.2,hubungan lemah/tidak monoton
+28,asi_eksklusif_proxy,ASI eksklusif (perkiraan),ASI & MPASI,Faktor yang bisa ditindaklanjuti,0.03,0.22,hubungan lemah/tidak monoton
+29,imun_polio,imun polio,Layanan anak,Faktor yang bisa ditindaklanjuti,0.02,0.26,nilai naik -> risiko turun
+30,kartu_sehat,Punya kartu kesehatan,Sosial ekonomi,Faktor yang bisa ditindaklanjuti,0.01,0.25,hubungan lemah/tidak monoton
+31,bblr,"BBLR (<2,5 kg)",Kelahiran,Faktor latar,0.01,0.18,nilai naik -> risiko naik
+32,imun_bcg,imun bcg,Layanan anak,Faktor yang bisa ditindaklanjuti,0.01,0.19,nilai naik -> risiko turun
+33,tempat_lahir_grup,Tempat melahirkan,Kelahiran,Faktor latar,0.0,2.04,nominal (lihat rata-rata per kategori)
+34,jml_tablet_besi,Jumlah tablet besi,Layanan kehamilan,Faktor latar,0.02,0.11,nilai naik -> risiko turun
+35,bb_lahir_kg,Berat badan lahir (kg),Kelahiran,Faktor latar,0.0,0.32,nilai naik -> risiko turun
+36,lama_hamil_minggu,Lama kehamilan (minggu),Kelahiran,Faktor latar,0.0,0.25,nilai naik -> risiko naik
+37,pend_ibu,Pendidikan ibu,Sosial ekonomi,Faktor latar,0.0,0.22,nilai naik -> risiko turun
+38,pend_ayah,Pendidikan ayah,Sosial ekonomi,Faktor latar,0.01,0.09,nilai naik -> risiko turun
+39,log_pengeluaran_pangan_perkapita,Pengeluaran pangan per kapita (log),Sosial ekonomi,Faktor latar,0.01,0.11,nilai naik -> risiko turun
+40,ada_ibu_di_RT,ada ibu di RT,Orang tua,Faktor latar,0.0,0.14,hubungan lemah/tidak monoton
+41,tinggi_ibu,Tinggi badan ibu (cm),Orang tua,Faktor latar,0.0,0.13,nilai naik -> risiko turun
+42,hari_terbaring_4mgg,hari terbaring 4mgg,Makan & kesehatan anak,Faktor latar,0.0,0.27,hubungan lemah/tidak monoton
+43,bb_ibu,Berat badan ibu (kg),Orang tua,Faktor latar,0.0,0.29,nilai naik -> risiko turun
+44,perkotaan,Tinggal di perkotaan,Sosial ekonomi,Faktor latar,0.0,0.31,nilai naik -> risiko turun
+45,ada_perokok_RT,Ada perokok di rumah,Sosial ekonomi,Faktor yang bisa ditindaklanjuti,0.0,0.15,hubungan lemah/tidak monoton
+46,punya_kartu_imun,Punya kartu imunisasi,Layanan anak,Faktor yang bisa ditindaklanjuti,0.0,0.06,hubungan lemah/tidak monoton
+47,umur_ibu,Umur ibu (tahun),Orang tua,Faktor latar,0.0,0.31,hubungan lemah/tidak monoton
+48,frek_makan_per_hari,frek makan per hari,Makan & kesehatan anak,Faktor yang bisa ditindaklanjuti,0.0,0.05,nilai naik -> risiko turun
+49,air_dini,Diberi air terlalu dini,ASI & MPASI,Faktor yang bisa ditindaklanjuti,0.0,0.09,hubungan lemah/tidak monoton
+50,status_sehat_umum,status sehat umum,Makan & kesehatan anak,Faktor latar,0.0,0.06,hubungan lemah/tidak monoton
+51,ukuran_bayi,Ukuran bayi saat lahir (persepsi ibu),Kelahiran,Faktor latar,0.0,0.13,nilai naik -> risiko naik
+52,asi_pernah,Pernah diberi ASI,ASI & MPASI,Faktor yang bisa ditindaklanjuti,0.0,0.22,hubungan lemah/tidak monoton
+53,kerja_ayah,kerja ayah,Sosial ekonomi,Faktor latar,0.0,0.04,nilai naik -> risiko turun
+54,kerja_ibu,kerja ibu,Sosial ekonomi,Faktor latar,0.0,0.02,hubungan lemah/tidak monoton
+55,sampah_layak,Pembuangan sampah layak,Air & sanitasi,Faktor yang bisa ditindaklanjuti,0.0,0.23,nilai naik -> risiko turun
+56,usia_air_bln,Usia pertama diberi air (bulan),ASI & MPASI,Faktor yang bisa ditindaklanjuti,0.0,0.16,nilai naik -> risiko turun
+57,anc_total,Jumlah kunjungan ANC,Layanan kehamilan,Faktor latar,0.0,0.07,nilai naik -> risiko turun
+58,periksa_hamil,periksa hamil,Layanan kehamilan,Faktor latar,0.0,0.04,hubungan lemah/tidak monoton
+59,toilet_layak,Toilet layak,Air & sanitasi,Faktor yang bisa ditindaklanjuti,0.0,0.04,nilai naik -> risiko turun
+60,tablet_besi,tablet besi,Layanan kehamilan,Faktor latar,0.0,0.1,hubungan lemah/tidak monoton
+61,imun_hepb,imun hepb,Layanan anak,Faktor yang bisa ditindaklanjuti,0.0,0.05,hubungan lemah/tidak monoton
+62,imun_rota,imun rota,Layanan anak,Faktor yang bisa ditindaklanjuti,0.0,0.06,hubungan lemah/tidak monoton
+63,hari_sakit_4mgg,hari sakit 4mgg,Makan & kesehatan anak,Faktor latar,0.0,0.01,nilai naik -> risiko turun
+64,air_layak,Sumber air minum layak,Air & sanitasi,Faktor yang bisa ditindaklanjuti,0.0,0.02,hubungan lemah/tidak monoton
+65,hamil_prematur_proxy,Kehamilan prematur (perkiraan),Kelahiran,Faktor latar,0.0,0.03,hubungan lemah/tidak monoton
+66,posyandu_4mgg,Ke Posyandu 4 minggu terakhir,Layanan anak,Faktor yang bisa ditindaklanjuti,0.0,0.04,hubungan lemah/tidak monoton
+67,hari_protein_hewani_7hr,hari protein hewani 7hr,Makan & kesehatan anak,Faktor yang bisa ditindaklanjuti,0.0,0.01,hubungan lemah/tidak monoton
+68,air_direbus,Air minum direbus,Air & sanitasi,Faktor yang bisa ditindaklanjuti,0.0,0.05,nilai naik -> risiko turun
+69,vit_a_6bln,Vitamin A 6 bulan terakhir,Layanan anak,Faktor yang bisa ditindaklanjuti,0.0,0.08,hubungan lemah/tidak monoton
+70,ada_ayah_di_RT,ada ayah di RT,Orang tua,Faktor latar,0.0,0.04,hubungan lemah/tidak monoton

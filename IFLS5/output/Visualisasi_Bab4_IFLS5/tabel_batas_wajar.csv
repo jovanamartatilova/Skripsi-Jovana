@@ -1,0 +1,10 @@
+﻿variabel;label;batas_bawah;batas_atas;jumlah_dijadikan_NaN
+bb_lahir_kg;Berat lahir;0,5;6,5;0
+lama_hamil_minggu;Lama kehamilan;20,0;50,0;0
+anc_total;Jumlah kunjungan ANC;0,0;20,0;0
+jml_tablet_besi;Jumlah tablet besi;0,0;400,0;0
+tinggi_ibu;Tinggi badan ibu;120,0;210,0;0
+tinggi_ayah;Tinggi badan ayah;120,0;210,0;0
+imt_ibu;IMT ibu;10,0;60,0;0
+umur_ibu;Umur ibu;10,0;90,0;0
+waz;WAZ (BB/U);-6,0;5,0;0

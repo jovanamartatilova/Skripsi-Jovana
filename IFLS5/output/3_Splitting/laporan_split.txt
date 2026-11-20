@@ -1,0 +1,26 @@
+=== SPLITTING IFLS5 (Proposal 3.1.7) ===
+[data] D:\UA_Tugas Kuliah\SKRIPSI\ML\IFLS5\output\BuildDataset\balita_ifls5.csv: 5243 baris x 90 kolom | stunting 34.56% | keluarga 4683
+[mode] split dikelompokkan per keluarga: True  (seed 42, test 20%, CV 5-fold)
+
+[1] Split: train 4195 (80.0%), test 1048 (20.0%)
+[2] Seed fold CV dipilih dari 42-61 berdasarkan sebaran prevalensi terkecil (tanpa melihat hasil model): 42
+[2] Fold CV pada train: f0: n=840, stunting 34.5% | f1: n=838, stunting 34.6% | f2: n=839, stunting 34.6% | f3: n=839, stunting 34.6% | f4: n=839, stunting 34.6%
+[3] Keseimbangan fitur train vs test: 79 dari 80 fitur seimbang (|SMD| < 0,1); terbesar: lama_hamil_minggu (0.108)
+
+[4] Pemeriksaan otomatis:
+     1. [LULUS] Train + test = seluruh data: 4195 + 1048 = 5243  (kriteria = 5243)
+     2. [LULUS] Tidak ada balita (pidlink) di train DAN test: 0  (kriteria 0)
+     3. [LULUS] Keluarga yang ada di train DAN test: 0  (kriteria 0 (mode kelompok))
+     4. [LULUS] Proporsi test mendekati 20%: 19.99%  (kriteria 19-21%)
+     5. [LULUS] Selisih prevalensi stunting train vs test: 0.02 poin persen  (kriteria < 1 poin)
+     6. [LULUS] Semua baris train punya fold_cv (0..4): [0, 1, 2, 3, 4]  (kriteria 0-4)
+     7. [LULUS] Keluarga yang terpisah antar fold CV: 0  (kriteria 0 (mode kelompok))
+     8. [LULUS] Selisih prevalensi antar fold CV: 0.09 poin persen  (kriteria < 2 poin)
+     9. [LULUS] Ukuran fold CV seimbang (min/maks): 0.998  (kriteria > 0,90)
+    10. [LULUS] Provinsi di test yang tidak ada di train: -  (kriteria tidak ada)
+    11. [LULUS] Ketidakseimbangan fitur berat (|SMD| >= 0,25): 0  (kriteria 0)
+    -> 11 lulus, 0 gagal
+
+Hasil disimpan di: D:\UA_Tugas Kuliah\SKRIPSI\ML\IFLS5\output\3_Splitting
+  train.csv, test.csv, split_assignment.csv, Ringkasan_Split.xlsx, eda_split_ringkasan.png, laporan_split.txt
+CATATAN: test.csv dikunci; jangan dipakai untuk memilih fitur, parameter, atau threshold.

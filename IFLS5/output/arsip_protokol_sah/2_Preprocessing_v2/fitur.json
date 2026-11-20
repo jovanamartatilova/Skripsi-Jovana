@@ -1,0 +1,29 @@
+{
+  "versi_sklearn": "1.9.1",
+  "spline": false,
+  "fitur_numerik": [
+    "umur_bln",
+    "jk_laki",
+    "waz",
+    "air_direbus",
+    "toilet_layak",
+    "sampah_layak",
+    "frek_timbang_6bln",
+    "hb_anak",
+    "hb_ibu",
+    "hari_makanan_olahan_7hr"
+  ],
+  "fitur_kategorik": [],
+  "nama_kolom_hasil": [
+    "umur_bln",
+    "jk_laki",
+    "waz",
+    "air_direbus",
+    "toilet_layak",
+    "sampah_layak",
+    "frek_timbang_6bln",
+    "hb_anak",
+    "hb_ibu",
+    "hari_makanan_olahan_7hr"
+  ]
+}

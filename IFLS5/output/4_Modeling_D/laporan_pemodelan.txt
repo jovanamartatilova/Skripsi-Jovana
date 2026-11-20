@@ -1,0 +1,58 @@
+=== PEMODELAN 4 SKENARIO IFLS5 (Proposal 3.1.8 - 3.1.10) | PROTOKOL PAPER (SMOTE sebelum split, threshold 0,5) ===
+[data] train (4195, 98), test (1048, 97) | stunting train 34.56%, test 34.54% | fold CV: 5 | K seleksi fitur = 8
+
+==============================================================================
+PEMODELAN: tanpa TB, dengan WAZ | pemodelan ulang dengan fitur terpilih
+==============================================================================
+  CATATAN: set ini memuat BB anak dan WAZ (tanpa TB). BB/U berkaitan erat dengan status gizi, sehingga sebagian kinerja berasal dari ukuran tubuh anak. Tulis di keterbatasan.
+  fitur mentah: 11 numerik/biner/ordinal + 0 nominal
+  [PROTOKOL PAPER] SMOTE seluruh data: 5243 -> 6862 baris (1619 sintetis); split 80:20 acak -> latih 5489, uji 1373; data sintetis di uji: 333 (24.3%) <- KEBOCORAN, tulis di keterbatasan; threshold tetap 0,5
+  [CV fold 0] train 4391, valid 1098, kolom hasil 11; fitur terpilih: waz, umur_bln, hb_anak, frek_timbang_6bln, hb_ibu, ...
+  [CV fold 1] train 4391, valid 1098, kolom hasil 11; fitur terpilih: waz, umur_bln, hb_anak, hb_ibu, frek_timbang_6bln, ...
+  [CV fold 2] train 4391, valid 1098, kolom hasil 11; fitur terpilih: waz, umur_bln, hb_anak, hb_ibu, frek_timbang_6bln, ...
+  [CV fold 3] train 4391, valid 1098, kolom hasil 11; fitur terpilih: waz, umur_bln, hb_anak, hb_ibu, frek_timbang_6bln, ...
+  [CV fold 4] train 4392, valid 1097, kolom hasil 11; fitur terpilih: waz, umur_bln, hb_anak, hb_ibu, frek_timbang_6bln, ...
+
+  Hasil OOF pada TRAIN (threshold terbaik dari OOF):
+skenario           algoritma seleksi_fitur  threshold  accuracy  precision  recall     f1  roc_auc
+      S1 Logistic Regression            ya        0.5    0.7357     0.7262  0.7566 0.7411   0.8049
+      S2 Logistic Regression         tidak        0.5    0.7382     0.7279  0.7610 0.7441   0.8066
+      S3       Random Forest            ya        0.5    0.7832     0.7885  0.7741 0.7812   0.8603
+      S4       Random Forest         tidak        0.5    0.7916     0.7964  0.7836 0.7899   0.8662
+
+  Skenario terpilih (urut f1 > recall > roc_auc pada OOF): S4 (Random Forest, tanpa seleksi fitur), threshold 0.50
+  Selisih F1 OOF dengan peringkat 2: 0.0087
+
+  Hasil TEST (threshold dikunci dari OOF; tidak dipakai untuk memilih):
+skenario           algoritma seleksi_fitur  threshold  accuracy  precision  recall     f1  roc_auc
+      S1 Logistic Regression            ya        0.5    0.7283     0.7118  0.7668 0.7382   0.8014
+      S2 Logistic Regression         tidak        0.5    0.7283     0.7135  0.7624 0.7371   0.8021
+      S3       Random Forest            ya        0.5    0.7881     0.7850  0.7930 0.7890   0.8647
+      S4       Random Forest         tidak        0.5    0.7953     0.7848  0.8134 0.7989   0.8738
+
+  Perbandingan threshold model S4 (dipilih dari OOF, dilaporkan di TEST; deskriptif):
+         dasar_pemilihan  threshold  accuracy  precision  recall     f1  roc_auc
+      F1 tertinggi (OOF)       0.44    0.7779     0.7433  0.8484 0.7924   0.8738
+Accuracy tertinggi (OOF)       0.49    0.7917     0.7755  0.8207 0.7975   0.8738
+Precision = recall (OOF)       0.49    0.7917     0.7755  0.8207 0.7975   0.8738
+     Dipakai di pipeline       0.50    0.7953     0.7848  0.8134 0.7989   0.8738
+  Selisih AUC OOF vs test terbesar: 0.0075 (kecil = generalisasi konsisten)
+
+  Feature importance model S4 (10 teratas, tingkat kolom):
+            kolom  importance  permutasi_turun_AUC_test
+              waz      0.3988                    0.2777
+         umur_bln      0.1637                    0.0438
+           hb_ibu      0.1362                    0.0250
+          hb_anak      0.1085                    0.0317
+frek_timbang_6bln      0.0809                    0.0308
+      kartu_sehat      0.0235                    0.0122
+          jk_laki      0.0224                    0.0114
+     sampah_layak      0.0217                    0.0183
+        air_layak      0.0168                    0.0100
+        masih_asi      0.0161                    0.0114
+  CATATAN: importance = kontribusi relatif ke prediksi, BUKAN hubungan sebab-akibat (proposal 2.6.6).
+
+Hasil disimpan di: D:\UA_Tugas Kuliah\SKRIPSI\ML\IFLS5\output\4_Modeling_D
+  Ringkasan_Pemodelan.xlsx, oof.csv, model_S1..S4.joblib, model_final.joblib,
+  prediksi_risiko.py, pemodelan_kurva.png, pemodelan_importance.png, laporan_pemodelan.txt
+CATATAN: test hanya dipakai SEKALI untuk evaluasi akhir; pemilihan skenario & threshold murni dari OOF train.

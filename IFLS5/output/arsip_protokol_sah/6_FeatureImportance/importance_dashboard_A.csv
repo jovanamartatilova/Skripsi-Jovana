@@ -1,0 +1,13 @@
+﻿peringkat,variabel,label,kelompok,jenis_faktor,kontribusi_pct,importance_bawaan_pct,arah
+1,tb_anak,Tinggi/panjang badan anak (cm),Antropometri anak (komponen HAZ),Faktor latar,50.32,29.51,nilai naik -> risiko turun
+2,umur_bln,Umur anak (bulan),Antropometri anak (komponen HAZ),Faktor latar,43.52,22.17,nilai naik -> risiko turun
+3,bb_anak,Berat badan anak (kg),Antropometri anak (komponen HAZ),Faktor latar,4.01,11.73,nilai naik -> risiko turun
+4,tinggi_ibu,Tinggi badan ibu (cm),Orang tua,Faktor latar,0.93,8.19,nilai naik -> risiko turun
+5,tinggi_ayah,Tinggi badan ayah (cm),Orang tua,Faktor latar,0.48,6.01,nilai naik -> risiko turun
+6,bb_lahir_kg,Berat badan lahir (kg),Kelahiran,Faktor latar,0.55,5.19,nilai naik -> risiko turun
+7,log_pengeluaran_perkapita,Pengeluaran per kapita (log),Sosial ekonomi,Faktor latar,0.0,5.03,nilai naik -> risiko turun
+8,bb_ayah,Berat badan ayah (kg),Orang tua,Faktor latar,0.0,4.64,nilai naik -> risiko turun
+9,jml_tablet_besi,Jumlah tablet besi,Layanan kehamilan,Faktor latar,0.05,3.35,hubungan lemah/tidak monoton
+10,usia_air_bln,Usia pertama diberi air (bulan),ASI & MPASI,Faktor yang bisa ditindaklanjuti,0.0,2.58,nilai naik -> risiko turun
+11,sampah_layak,Pembuangan sampah layak,Air & sanitasi,Faktor yang bisa ditindaklanjuti,0.04,0.84,nilai naik -> risiko turun
+12,imun_campak,imun campak,Layanan anak,Faktor yang bisa ditindaklanjuti,0.09,0.77,hubungan lemah/tidak monoton

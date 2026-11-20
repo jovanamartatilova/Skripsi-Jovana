@@ -1,0 +1,26 @@
+=== FEATURE IMPORTANCE IFLS5 (Proposal 3.1.10) ===
+[data] train (4195, 91) | stunting 34.56% | fold CV 5 | model tahap 4: S4 (Random Forest) | 45 kandidat variabel
+  Pemilihan fitur memakai data TRAIN saja (CV); data TEST tidak dipakai di skrip ini.
+
+[1] Permutasi per variabel (45 variabel x 5 ulangan x 5 fold) ...
+    fold 0: n validasi 840, AUC dasar 0.8135
+    fold 1: n validasi 838, AUC dasar 0.8065
+    fold 2: n validasi 839, AUC dasar 0.8063
+    fold 3: n validasi 839, AUC dasar 0.8247
+    fold 4: n validasi 839, AUC dasar 0.8078
+
+[2] Peringkat teratas (permutasi): waz, tinggi_ibu, umur_bln, tinggi_ayah, bb_lahir_kg | konsistensi bawaan vs permutasi (Spearman) 0.41  -> berbeda; permutasi dijadikan acuan (lebih andal pada fitur berkorelasi)
+
+[3] Variabel dapat-ditindaklanjuti: 25 kandidat -> 8 dipilih (kumulatif 82.2% dari kontribusi kelompok ini; batas 80%)
+    Sensitivitas batas: 70% -> 6 variabel; 80% -> 8 variabel; 90% -> 10 variabel
+    Dipilih: hb_anak, sampah_layak, masih_asi, air_direbus, frek_timbang_6bln, hb_ibu, air_layak, kartu_sehat
+    Kontrol: umur_bln, jk_laki, waz
+    Faktor latar berkontribusi terbesar (TIDAK ikut model; masukkan ke --kontrol bila ingin dipertahankan): tinggi_ibu (6.7%), tinggi_ayah (3.0%), bb_lahir_kg (1.3%), umur_ibu (0.5%), indeks_kekayaan_pca (0.3%)
+    Fitur pemodelan ulang: 11 variabel -> fitur_tahap3.txt
+    Per kategori: 1. Air, sanitasi, dan kebersihan lingkungan 37.2%; 5. Anemia (Hb) anak dan ibu 29.0%; 3. ASI dan MPASI 11.9%; 6. Pemantauan pertumbuhan di Posyandu 8.6%; 4. Asupan makan anak 6.4%; 7. Imunisasi dan jaminan kesehatan 4.1%; 2. Kondisi rumah dan paparan asap 2.8%
+
+Hasil disimpan di: output\5_FeatureImportance_B
+  Feature_Importance.xlsx, fitur_tahap3.txt, importance_dashboard.csv, fi_peringkat.png, fi_kumulatif.png,
+  prediksi_risiko.py + jelaskan_risiko.py (salin keduanya ke folder dashboard)
+LANGKAH BERIKUTNYA: python 2_PREPROCESSING.py --fitur-file <fitur_tahap3.txt> --out <folder> lalu python 4_PEMODELAN.py --protokol-paper --fitur-file <fitur_tahap3.txt> --pre <preprocessor> --out <folder> --kuota 0 --k <n>
+CATATAN: importance = kontribusi relatif terhadap prediksi model, BUKAN bukti sebab-akibat (proposal 2.6.6).

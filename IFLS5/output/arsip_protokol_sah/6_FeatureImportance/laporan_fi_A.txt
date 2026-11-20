@@ -1,0 +1,13 @@
+
+==============================================================================
+SET PREDIKTOR A
+==============================================================================
+  Model terpilih S2: Logistic Regression | 103 kolom -> 70 variabel asal | thr 0.56
+  PERINGATAN: set A memuat TB (komponen rumus HAZ) -> importance mencerminkan rumus HAZ; hanya pembanding.
+  Kinerja dasar test: AUC 0.9695, F1 0.8712
+  [2] Permutasi per variabel (70 variabel x 20) ...
+  [3] SHAP dihitung pada 500 baris test
+  [4] Peringkat gabungan (5 teratas): tb_anak, umur_bln, bb_anak, waz, hanya_asi
+      Konsistensi bawaan vs permutasi (Spearman): 0.64
+  [5] Porsi kontribusi (permutasi) komponen rumus HAZ (TB, umur, JK): 58.5%
+  [8] Contoh penjelasan per balita dibuat (3 kasus); fungsi untuk dashboard: jelaskan_risiko.py

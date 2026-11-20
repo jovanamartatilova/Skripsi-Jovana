@@ -1,0 +1,26 @@
+=== FEATURE IMPORTANCE IFLS5 (Proposal 3.1.10) ===
+[data] train (4195, 91) | stunting 34.56% | fold CV 5 | model tahap 4: S3 (Random Forest) | 46 kandidat variabel
+  Pemilihan fitur memakai data TRAIN saja (CV); data TEST tidak dipakai di skrip ini.
+
+[1] Permutasi per variabel (46 variabel x 5 ulangan x 5 fold) ...
+    fold 0: n validasi 840, AUC dasar 0.9525
+    fold 1: n validasi 838, AUC dasar 0.9390
+    fold 2: n validasi 839, AUC dasar 0.9491
+    fold 3: n validasi 839, AUC dasar 0.9683
+    fold 4: n validasi 839, AUC dasar 0.9553
+
+[2] Peringkat teratas (permutasi): tb_anak, umur_bln, waz, tinggi_ibu, tinggi_ayah | konsistensi bawaan vs permutasi (Spearman) 0.25  -> berbeda; permutasi dijadikan acuan (lebih andal pada fitur berkorelasi)
+  [peringatan] hanya 4 variabel dapat-ditindaklanjuti yang nyata (< min-var 5)
+
+[3] Variabel dapat-ditindaklanjuti: 25 kandidat -> 4 dipilih (kumulatif 67.1% dari kontribusi kelompok ini; batas 80%)
+    Sensitivitas batas: 70% -> 4 variabel; 80% -> 4 variabel; 90% -> 4 variabel
+    Dipilih: jenis_makanan_7hr, hb_ibu, masih_asi, vit_a_6bln
+    Kontrol: umur_bln, jk_laki, waz, tb_anak
+    Faktor latar berkontribusi terbesar (TIDAK ikut model; masukkan ke --kontrol bila ingin dipertahankan): tinggi_ibu (0.3%), tinggi_ayah (0.1%), imt_ibu (0.0%), umur_ibu (0.0%), indeks_kekayaan_pca (0.0%)
+    Fitur pemodelan ulang: 8 variabel -> fitur_tahap3.txt
+
+Hasil disimpan di: D:\UA_Tugas Kuliah\SKRIPSI\ML\IFLS5\output\5_FeatureImportance_A
+  Feature_Importance.xlsx, fitur_tahap3.txt, importance_dashboard.csv, fi_peringkat.png, fi_kumulatif.png,
+  prediksi_risiko.py + jelaskan_risiko.py (salin keduanya ke folder dashboard)
+LANGKAH BERIKUTNYA: python 2_PREPROCESSING.py --fitur-file <fitur_tahap3.txt> --out <folder> lalu python 4_PEMODELAN.py --protokol-paper --fitur-file <fitur_tahap3.txt> --pre <preprocessor> --out <folder> --kuota 0 --k <n>
+CATATAN: importance = kontribusi relatif terhadap prediksi model, BUKAN bukti sebab-akibat (proposal 2.6.6).

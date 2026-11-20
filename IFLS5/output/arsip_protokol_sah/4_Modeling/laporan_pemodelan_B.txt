@@ -1,0 +1,88 @@
+=== PEMODELAN 4 SKENARIO IFLS5 (Proposal 3.1.8 - 3.1.10) ===
+[data] train (4195, 80), test (1048, 79) | stunting train 34.56%, test 34.54% | fold CV: 5 | K seleksi fitur = 12
+
+==============================================================================
+SET PREDIKTOR A: dengan TB & BB anak (mengikuti Novalina dkk.)
+==============================================================================
+  PERINGATAN KEBOCORAN: set ini memuat TB & BB anak. HAZ dihitung dari TB, umur, JK -> AUC sangat tinggi = model mereproduksi rumus HAZ, bukan memprediksi risiko. Laporkan di keterbatasan; bandingkan dengan set B.
+  fitur mentah: 67 numerik/biner/ordinal + 3 nominal
+  [CV fold 0] train 3355, valid 840, kolom hasil 103; fitur terpilih: tb_anak, waz, umur_bln, bb_anak, tinggi_ibu, ...
+  [CV fold 1] train 3357, valid 838, kolom hasil 103; fitur terpilih: tb_anak, waz, umur_bln, tinggi_ibu, bb_anak, ...
+  [CV fold 2] train 3356, valid 839, kolom hasil 103; fitur terpilih: tb_anak, waz, umur_bln, bb_anak, bb_lahir_kg, ...
+  [CV fold 3] train 3356, valid 839, kolom hasil 103; fitur terpilih: tb_anak, waz, umur_bln, bb_anak, tinggi_ibu, ...
+  [CV fold 4] train 3356, valid 839, kolom hasil 103; fitur terpilih: tb_anak, waz, umur_bln, bb_lahir_kg, bb_anak, ...
+
+  Hasil OOF pada TRAIN (threshold terbaik dari OOF):
+skenario           algoritma seleksi_fitur  threshold  accuracy  precision  recall     f1  roc_auc
+      S1 Logistic Regression            ya       0.52    0.8899     0.8107  0.8890 0.8480   0.9536
+      S2 Logistic Regression         tidak       0.56    0.8987     0.8396  0.8738 0.8564   0.9605
+      S3       Random Forest            ya       0.44    0.8391     0.7176  0.8814 0.7911   0.9267
+      S4       Random Forest         tidak       0.41    0.7652     0.6165  0.8483 0.7141   0.8704
+
+  Skenario terpilih (urut f1 > recall > roc_auc pada OOF): S2 (Logistic Regression, tanpa seleksi fitur), threshold 0.56
+  Selisih F1 OOF dengan peringkat 2: 0.0083
+
+  Hasil TEST (threshold dikunci dari OOF; tidak dipakai untuk memilih):
+skenario           algoritma seleksi_fitur  threshold  accuracy  precision  recall     f1  roc_auc
+      S1 Logistic Regression            ya       0.52    0.8922     0.8184  0.8840 0.8499   0.9541
+      S2 Logistic Regression         tidak       0.56    0.9103     0.8641  0.8785 0.8712   0.9695
+      S3       Random Forest            ya       0.44    0.8368     0.7185  0.8674 0.7860   0.9350
+      S4       Random Forest         tidak       0.41    0.7529     0.6032  0.8315 0.6992   0.8685
+  Selisih AUC OOF vs test terbesar: 0.0090 (kecil = generalisasi konsisten)
+
+  Feature importance model S2 (10 teratas, tingkat kolom):
+            kolom  importance  permutasi_turun_AUC_test
+          tb_anak     11.4935                    0.4317
+         umur_bln      5.3556                    0.2743
+          bb_anak      4.8394                    0.1888
+              waz      2.8309                    0.2212
+        hanya_asi      1.1853                    0.0402
+ limbah_kode_11.0      0.8657                    0.0001
+    provinsi_19.0      0.7553                    0.0001
+    provinsi_14.0      0.5677                    0.0000
+jenis_makanan_7hr      0.5580                    0.0109
+         imt_ayah      0.5069                    0.0098
+  CATATAN: importance = kontribusi relatif ke prediksi, BUKAN hubungan sebab-akibat (proposal 2.6.6).
+
+==============================================================================
+SET PREDIKTOR B: tanpa TB, dengan BB anak dan WAZ
+==============================================================================
+  CATATAN: set ini memuat BB anak dan WAZ (tanpa TB). BB/U berkaitan erat dengan status gizi, sehingga sebagian kinerja berasal dari ukuran tubuh anak. Tulis di keterbatasan.
+  fitur mentah: 66 numerik/biner/ordinal + 3 nominal
+  [CV fold 0] train 3355, valid 840, kolom hasil 102; fitur terpilih: waz, bb_anak, tinggi_ibu, umur_bln, tinggi_ayah, ...
+  [CV fold 1] train 3357, valid 838, kolom hasil 102; fitur terpilih: waz, tinggi_ibu, tinggi_ayah, umur_bln, bb_anak, ...
+  [CV fold 2] train 3356, valid 839, kolom hasil 102; fitur terpilih: waz, tinggi_ibu, umur_bln, bb_anak, tinggi_ayah, ...
+  [CV fold 3] train 3356, valid 839, kolom hasil 102; fitur terpilih: waz, tinggi_ibu, umur_bln, bb_anak, tinggi_ayah, ...
+  [CV fold 4] train 3356, valid 839, kolom hasil 102; fitur terpilih: waz, tinggi_ibu, umur_bln, tinggi_ayah, bb_anak, ...
+
+  Hasil OOF pada TRAIN (threshold terbaik dari OOF):
+skenario           algoritma seleksi_fitur  threshold  accuracy  precision  recall     f1  roc_auc
+      S1 Logistic Regression            ya       0.50    0.7335     0.5904  0.7476 0.6598   0.8003
+      S2 Logistic Regression         tidak       0.47    0.7147     0.5646  0.7628 0.6489   0.7935
+      S3       Random Forest            ya       0.46    0.7511     0.6200  0.7234 0.6677   0.8107
+      S4       Random Forest         tidak       0.46    0.7538     0.6209  0.7386 0.6746   0.8143
+
+  Skenario terpilih (urut f1 > recall > roc_auc pada OOF): S4 (Random Forest, tanpa seleksi fitur), threshold 0.46
+  Selisih F1 OOF dengan peringkat 2: 0.0069
+
+  Hasil TEST (threshold dikunci dari OOF; tidak dipakai untuk memilih):
+skenario           algoritma seleksi_fitur  threshold  accuracy  precision  recall     f1  roc_auc
+      S1 Logistic Regression            ya       0.50    0.7290     0.5852  0.7403 0.6537   0.8109
+      S2 Logistic Regression         tidak       0.47    0.7281     0.5772  0.7956 0.6690   0.8163
+      S3       Random Forest            ya       0.46    0.7366     0.5995  0.7155 0.6524   0.8018
+      S4       Random Forest         tidak       0.46    0.7414     0.6066  0.7155 0.6565   0.8080
+  Selisih AUC OOF vs test terbesar: 0.0227 (kecil = generalisasi konsisten)
+
+  Feature importance model S4 (10 teratas, tingkat kolom):
+                           kolom  importance  permutasi_turun_AUC_test
+                             waz      0.2349                    0.1471
+                         bb_anak      0.0808                    0.0206
+                      tinggi_ibu      0.0532                    0.0097
+                        umur_bln      0.0453                    0.0097
+                     tinggi_ayah      0.0370                    0.0064
+                     bb_lahir_kg      0.0278                    0.0018
+       log_pengeluaran_perkapita      0.0276                   -0.0007
+                          bb_ibu      0.0275                    0.0003
+                         bb_ayah      0.0265                   -0.0000
+log_pengeluaran_pangan_perkapita      0.0250                    0.0000
+  CATATAN: importance = kontribusi relatif ke prediksi, BUKAN hubungan sebab-akibat (proposal 2.6.6).

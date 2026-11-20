@@ -1,0 +1,7 @@
+﻿variabel;label;P1;P99;n_di_bawah_P1;n_di_atas_P99;min_sebelum;max_sebelum;min_sesudah;max_sesudah
+bb_lahir_kg;Berat lahir;1,8;4,5;39;27;1,0;5,5;1,8;4,5
+tinggi_ibu;Tinggi badan ibu;139,9;164,49;50;51;125,8;174,5;139,9;164,49
+tinggi_ayah;Tinggi badan ayah;149,5;177,96;39;41;128,5;198,0;149,5;177,96
+imt_ibu;IMT ibu;16,36;37,14;51;50;12,04;56,01;16,36;37,14
+umur_ibu;Umur ibu;18,0;44,0;31;50;15,0;54,0;18,0;44,0
+jml_tablet_besi;Jumlah tablet besi;0,0;280,0;0;39;0,0;400,0;0,0;280,0

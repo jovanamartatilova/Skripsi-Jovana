@@ -1,0 +1,10 @@
+umur_bln
+jk_laki
+waz
+hb_anak
+toilet_layak
+air_direbus
+hb_ibu
+sampah_layak
+hari_makanan_olahan_7hr
+frek_timbang_6bln

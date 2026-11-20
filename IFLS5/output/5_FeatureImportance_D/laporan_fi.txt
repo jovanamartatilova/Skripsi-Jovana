@@ -1,0 +1,26 @@
+=== FEATURE IMPORTANCE IFLS5 (Proposal 3.1.10) ===
+[data] train (4195, 91) | stunting 34.56% | fold CV 5 | model tahap 4: S4 (Random Forest) | 11 kandidat variabel
+  Pemilihan fitur memakai data TRAIN saja (CV); data TEST tidak dipakai di skrip ini.
+
+[1] Permutasi per variabel (11 variabel x 5 ulangan x 5 fold) ...
+    fold 0: n validasi 840, AUC dasar 0.8061
+    fold 1: n validasi 838, AUC dasar 0.7892
+    fold 2: n validasi 839, AUC dasar 0.7728
+    fold 3: n validasi 839, AUC dasar 0.8072
+    fold 4: n validasi 839, AUC dasar 0.7791
+
+[2] Peringkat teratas (permutasi): waz, umur_bln, air_layak, masih_asi, air_direbus | konsistensi bawaan vs permutasi (Spearman) 0.08  -> berbeda; permutasi dijadikan acuan (lebih andal pada fitur berkorelasi)
+  [peringatan] hanya 4 variabel dapat-ditindaklanjuti yang nyata (< min-var 5)
+
+[3] Variabel dapat-ditindaklanjuti: 8 kandidat -> 4 dipilih (kumulatif 79.6% dari kontribusi kelompok ini; batas 80%)
+    Sensitivitas batas: 70% -> 4 variabel; 80% -> 4 variabel; 90% -> 4 variabel
+    Dipilih: air_layak, masih_asi, air_direbus, sampah_layak
+    Kontrol: umur_bln, jk_laki, waz
+    Faktor latar berkontribusi terbesar (TIDAK ikut model; masukkan ke --kontrol bila ingin dipertahankan): 
+    Fitur pemodelan ulang: 7 variabel -> fitur_tahap3.txt
+
+Hasil disimpan di: D:\UA_Tugas Kuliah\SKRIPSI\ML\IFLS5\output\5_FeatureImportance_D
+  Feature_Importance.xlsx, fitur_tahap3.txt, importance_dashboard.csv, fi_peringkat.png, fi_kumulatif.png,
+  prediksi_risiko.py + jelaskan_risiko.py (salin keduanya ke folder dashboard)
+LANGKAH BERIKUTNYA: python 2_PREPROCESSING.py --fitur-file <fitur_tahap3.txt> --out <folder> lalu python 4_PEMODELAN.py --protokol-paper --fitur-file <fitur_tahap3.txt> --pre <preprocessor> --out <folder> --kuota 0 --k <n>
+CATATAN: importance = kontribusi relatif terhadap prediksi model, BUKAN bukti sebab-akibat (proposal 2.6.6).

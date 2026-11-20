@@ -1,0 +1,20 @@
+# data balita (ada NIK / nama)
+Dataset/Puskesmas/
+Dataset/Posyandu/
+data_*.xlsx
+audit_validasi_*
+hasil_prediksi.csv
+
+# file besar
+*.dta
+cv_cache/
+IFLS5/output/arsip_pembanding/
+
+# model: hanya model yang dipakai dashboard
+*.joblib
+!IFLS5/output/4_Modeling_B/model_final.joblib
+
+# lain-lain
+__pycache__/
+.ipynb_checkpoints/
+.streamlit/secrets.toml
